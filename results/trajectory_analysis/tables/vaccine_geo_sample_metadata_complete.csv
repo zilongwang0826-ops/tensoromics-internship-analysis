@@ -1,0 +1,289 @@
+geo_accession,sample_title,source_name,subject_id,vaccine,cohort,visit,sex,age,age_group,tissue,day
+GSM2094438,HIPCVAX005_ZV101_D0_PBMC,young_subject_Visit 1,ZV101,VZV,Atlanta,Visit 1; baseline,female,29,young,PBMC,0
+GSM2094510,HIPCVAX005_ZV101_D1_PBMC,young_subject_Visit 2,ZV101,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,29,young,PBMC,1
+GSM2094582,HIPCVAX005_ZV101_D3_PBMC,young_subject_Visit 3,ZV101,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,29,young,PBMC,3
+GSM2094654,HIPCVAX005_ZV101_D7_PBMC,young_subject_Visit 4,ZV101,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,29,young,PBMC,7
+GSM2094439,HIPCVAX005_ZV103_D0_PBMC,elderly_subject_Visit 1,ZV103,VZV,Atlanta,Visit 1; baseline,female,62,elderly,PBMC,0
+GSM2094511,HIPCVAX005_ZV103_D1_PBMC,elderly_subject_Visit 2,ZV103,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,62,elderly,PBMC,1
+GSM2094583,HIPCVAX005_ZV103_D3_PBMC,elderly_subject_Visit 3,ZV103,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,62,elderly,PBMC,3
+GSM2094655,HIPCVAX005_ZV103_D7_PBMC,elderly_subject_Visit 4,ZV103,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,62,elderly,PBMC,7
+GSM2094440,HIPCVAX005_ZV104_D0_PBMC,young_subject_Visit 1,ZV104,VZV,Atlanta,Visit 1; baseline,female,35,young,PBMC,0
+GSM2094512,HIPCVAX005_ZV104_D1_PBMC,young_subject_Visit 2,ZV104,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,35,young,PBMC,1
+GSM2094584,HIPCVAX005_ZV104_D3_PBMC,young_subject_Visit 3,ZV104,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,35,young,PBMC,3
+GSM2094656,HIPCVAX005_ZV104_D7_PBMC,young_subject_Visit 4,ZV104,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,35,young,PBMC,7
+GSM2094441,HIPCVAX005_ZV105_D0_PBMC,elderly_subject_Visit 1,ZV105,VZV,Atlanta,Visit 1; baseline,female,73,elderly,PBMC,0
+GSM2094513,HIPCVAX005_ZV105_D1_PBMC,elderly_subject_Visit 2,ZV105,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,73,elderly,PBMC,1
+GSM2094585,HIPCVAX005_ZV105_D3_PBMC,elderly_subject_Visit 3,ZV105,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,73,elderly,PBMC,3
+GSM2094657,HIPCVAX005_ZV105_D7_PBMC,elderly_subject_Visit 4,ZV105,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,73,elderly,PBMC,7
+GSM2094442,HIPCVAX005_ZV106_D0_PBMC,young_subject_Visit 1,ZV106,VZV,Atlanta,Visit 1; baseline,female,38,young,PBMC,0
+GSM2094514,HIPCVAX005_ZV106_D1_PBMC,young_subject_Visit 2,ZV106,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,38,young,PBMC,1
+GSM2094586,HIPCVAX005_ZV106_D3_PBMC,young_subject_Visit 3,ZV106,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,38,young,PBMC,3
+GSM2094658,HIPCVAX005_ZV106_D7_PBMC,young_subject_Visit 4,ZV106,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,38,young,PBMC,7
+GSM2094443,HIPCVAX005_ZV108_D0_PBMC,elderly_subject_Visit 1,ZV108,VZV,Atlanta,Visit 1; baseline,female,71,elderly,PBMC,0
+GSM2094515,HIPCVAX005_ZV108_D1_PBMC,elderly_subject_Visit 2,ZV108,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,71,elderly,PBMC,1
+GSM2094587,HIPCVAX005_ZV108_D3_PBMC,elderly_subject_Visit 3,ZV108,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,71,elderly,PBMC,3
+GSM2094659,HIPCVAX005_ZV108_D7_PBMC,elderly_subject_Visit 4,ZV108,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,71,elderly,PBMC,7
+GSM2094447,HIPCVAX005_ZV109_D0_PBMC,elderly_subject_Visit 1,ZV109,VZV,Atlanta,Visit 1; baseline,male,68,elderly,PBMC,0
+GSM2094519,HIPCVAX005_ZV109_D1_PBMC,elderly_subject_Visit 2,ZV109,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,68,elderly,PBMC,1
+GSM2094591,HIPCVAX005_ZV109_D3_PBMC,elderly_subject_Visit 3,ZV109,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,68,elderly,PBMC,3
+GSM2094663,HIPCVAX005_ZV109_D7_PBMC,elderly_subject_Visit 4,ZV109,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,68,elderly,PBMC,7
+GSM2094444,HIPCVAX005_ZV110_D0_PBMC,young_subject_Visit 1,ZV110,VZV,Atlanta,Visit 1; baseline,male,30,young,PBMC,0
+GSM2094516,HIPCVAX005_ZV110_D1_PBMC,young_subject_Visit 2,ZV110,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,30,young,PBMC,1
+GSM2094588,HIPCVAX005_ZV110_D3_PBMC,young_subject_Visit 3,ZV110,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,30,young,PBMC,3
+GSM2094660,HIPCVAX005_ZV110_D7_PBMC,young_subject_Visit 4,ZV110,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,30,young,PBMC,7
+GSM2094445,HIPCVAX005_ZV111_D0_PBMC,elderly_subject_Visit 1,ZV111,VZV,Atlanta,Visit 1; baseline,female,76,elderly,PBMC,0
+GSM2094517,HIPCVAX005_ZV111_D1_PBMC,elderly_subject_Visit 2,ZV111,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,76,elderly,PBMC,1
+GSM2094589,HIPCVAX005_ZV111_D3_PBMC,elderly_subject_Visit 3,ZV111,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,76,elderly,PBMC,3
+GSM2094661,HIPCVAX005_ZV111_D7_PBMC,elderly_subject_Visit 4,ZV111,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,76,elderly,PBMC,7
+GSM2094446,HIPCVAX005_ZV112_D0_PBMC,young_subject_Visit 1,ZV112,VZV,Atlanta,Visit 1; baseline,female,37,young,PBMC,0
+GSM2094518,HIPCVAX005_ZV112_D1_PBMC,young_subject_Visit 2,ZV112,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,37,young,PBMC,1
+GSM2094590,HIPCVAX005_ZV112_D3_PBMC,young_subject_Visit 3,ZV112,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,37,young,PBMC,3
+GSM2094662,HIPCVAX005_ZV112_D7_PBMC,young_subject_Visit 4,ZV112,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,37,young,PBMC,7
+GSM2094448,HIPCVAX005_ZV113_D0_PBMC,young_subject_Visit 1,ZV113,VZV,Atlanta,Visit 1; baseline,female,32,young,PBMC,0
+GSM2094520,HIPCVAX005_ZV113_D1_PBMC,young_subject_Visit 2,ZV113,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,32,young,PBMC,1
+GSM2094592,HIPCVAX005_ZV113_D3_PBMC,young_subject_Visit 3,ZV113,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,32,young,PBMC,3
+GSM2094664,HIPCVAX005_ZV113_D7_PBMC,young_subject_Visit 4,ZV113,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,32,young,PBMC,7
+GSM2094449,HIPCVAX005_ZV114_D0_PBMC,elderly_subject_Visit 1,ZV114,VZV,Atlanta,Visit 1; baseline,female,74,elderly,PBMC,0
+GSM2094521,HIPCVAX005_ZV114_D1_PBMC,elderly_subject_Visit 2,ZV114,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,74,elderly,PBMC,1
+GSM2094593,HIPCVAX005_ZV114_D3_PBMC,elderly_subject_Visit 3,ZV114,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,74,elderly,PBMC,3
+GSM2094665,HIPCVAX005_ZV114_D7_PBMC,elderly_subject_Visit 4,ZV114,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,74,elderly,PBMC,7
+GSM2094450,HIPCVAX005_ZV115_D0_PBMC,young_subject_Visit 1,ZV115,VZV,Atlanta,Visit 1; baseline,male,34,young,PBMC,0
+GSM2094522,HIPCVAX005_ZV115_D1_PBMC,young_subject_Visit 2,ZV115,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,34,young,PBMC,1
+GSM2094594,HIPCVAX005_ZV115_D3_PBMC,young_subject_Visit 3,ZV115,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,34,young,PBMC,3
+GSM2094666,HIPCVAX005_ZV115_D7_PBMC,young_subject_Visit 4,ZV115,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,34,young,PBMC,7
+GSM2094451,HIPCVAX005_ZV116_D0_PBMC,young_subject_Visit 1,ZV116,VZV,Atlanta,Visit 1; baseline,male,30,young,PBMC,0
+GSM2094523,HIPCVAX005_ZV116_D1_PBMC,young_subject_Visit 2,ZV116,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,30,young,PBMC,1
+GSM2094595,HIPCVAX005_ZV116_D3_PBMC,young_subject_Visit 3,ZV116,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,30,young,PBMC,3
+GSM2094667,HIPCVAX005_ZV116_D7_PBMC,young_subject_Visit 4,ZV116,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,30,young,PBMC,7
+GSM2094452,HIPCVAX005_ZV117_D0_PBMC,young_subject_Visit 1,ZV117,VZV,Atlanta,Visit 1; baseline,female,28,young,PBMC,0
+GSM2094524,HIPCVAX005_ZV117_D1_PBMC,young_subject_Visit 2,ZV117,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,28,young,PBMC,1
+GSM2094596,HIPCVAX005_ZV117_D3_PBMC,young_subject_Visit 3,ZV117,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,28,young,PBMC,3
+GSM2094668,HIPCVAX005_ZV117_D7_PBMC,young_subject_Visit 4,ZV117,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,28,young,PBMC,7
+GSM2094453,HIPCVAX005_ZV118_D0_PBMC,elderly_subject_Visit 1,ZV118,VZV,Atlanta,Visit 1; baseline,female,64,elderly,PBMC,0
+GSM2094525,HIPCVAX005_ZV118_D1_PBMC,elderly_subject_Visit 2,ZV118,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,64,elderly,PBMC,1
+GSM2094597,HIPCVAX005_ZV118_D3_PBMC,elderly_subject_Visit 3,ZV118,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,64,elderly,PBMC,3
+GSM2094669,HIPCVAX005_ZV118_D7_PBMC,elderly_subject_Visit 4,ZV118,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,64,elderly,PBMC,7
+GSM2094454,HIPCVAX005_ZV119_D0_PBMC,elderly_subject_Visit 1,ZV119,VZV,Atlanta,Visit 1; baseline,male,68,elderly,PBMC,0
+GSM2094526,HIPCVAX005_ZV119_D1_PBMC,elderly_subject_Visit 2,ZV119,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,68,elderly,PBMC,1
+GSM2094598,HIPCVAX005_ZV119_D3_PBMC,elderly_subject_Visit 3,ZV119,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,68,elderly,PBMC,3
+GSM2094670,HIPCVAX005_ZV119_D7_PBMC,elderly_subject_Visit 4,ZV119,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,68,elderly,PBMC,7
+GSM2094455,HIPCVAX005_ZV120_D0_PBMC,elderly_subject_Visit 1,ZV120,VZV,Atlanta,Visit 1; baseline,male,73,elderly,PBMC,0
+GSM2094527,HIPCVAX005_ZV120_D1_PBMC,elderly_subject_Visit 2,ZV120,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,73,elderly,PBMC,1
+GSM2094599,HIPCVAX005_ZV120_D3_PBMC,elderly_subject_Visit 3,ZV120,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,73,elderly,PBMC,3
+GSM2094671,HIPCVAX005_ZV120_D7_PBMC,elderly_subject_Visit 4,ZV120,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,73,elderly,PBMC,7
+GSM2094456,HIPCVAX005_ZV121_D0_PBMC,young_subject_Visit 1,ZV121,VZV,Atlanta,Visit 1; baseline,male,26,young,PBMC,0
+GSM2094528,HIPCVAX005_ZV121_D1_PBMC,young_subject_Visit 2,ZV121,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,26,young,PBMC,1
+GSM2094600,HIPCVAX005_ZV121_D3_PBMC,young_subject_Visit 3,ZV121,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,26,young,PBMC,3
+GSM2094672,HIPCVAX005_ZV121_D7_PBMC,young_subject_Visit 4,ZV121,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,26,young,PBMC,7
+GSM2094468,HIPCVAX005_ZV122_D0_PBMC,elderly_subject_Visit 1,ZV122,VZV,Atlanta,Visit 1; baseline,female,77,elderly,PBMC,0
+GSM2094540,HIPCVAX005_ZV122_D1_PBMC,elderly_subject_Visit 2,ZV122,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,77,elderly,PBMC,1
+GSM2094612,HIPCVAX005_ZV122_D3_PBMC,elderly_subject_Visit 3,ZV122,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,77,elderly,PBMC,3
+GSM2094684,HIPCVAX005_ZV122_D7_PBMC,elderly_subject_Visit 4,ZV122,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,77,elderly,PBMC,7
+GSM2094457,HIPCVAX005_ZV125_D0_PBMC,elderly_subject_Visit 1,ZV125,VZV,Atlanta,Visit 1; baseline,male,68,elderly,PBMC,0
+GSM2094529,HIPCVAX005_ZV125_D1_PBMC,elderly_subject_Visit 2,ZV125,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,68,elderly,PBMC,1
+GSM2094601,HIPCVAX005_ZV125_D3_PBMC,elderly_subject_Visit 3,ZV125,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,68,elderly,PBMC,3
+GSM2094673,HIPCVAX005_ZV125_D7_PBMC,elderly_subject_Visit 4,ZV125,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,68,elderly,PBMC,7
+GSM2094462,HIPCVAX005_ZV126_D0_PBMC,elderly_subject_Visit 1,ZV126,VZV,Atlanta,Visit 1; baseline,female,67,elderly,PBMC,0
+GSM2094534,HIPCVAX005_ZV126_D1_PBMC,elderly_subject_Visit 2,ZV126,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,67,elderly,PBMC,1
+GSM2094606,HIPCVAX005_ZV126_D3_PBMC,elderly_subject_Visit 3,ZV126,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,67,elderly,PBMC,3
+GSM2094678,HIPCVAX005_ZV126_D7_PBMC,elderly_subject_Visit 4,ZV126,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,67,elderly,PBMC,7
+GSM2094463,HIPCVAX005_ZV127_D0_PBMC,elderly_subject_Visit 1,ZV127,VZV,Atlanta,Visit 1; baseline,female,62,elderly,PBMC,0
+GSM2094535,HIPCVAX005_ZV127_D1_PBMC,elderly_subject_Visit 2,ZV127,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,62,elderly,PBMC,1
+GSM2094607,HIPCVAX005_ZV127_D3_PBMC,elderly_subject_Visit 3,ZV127,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,62,elderly,PBMC,3
+GSM2094679,HIPCVAX005_ZV127_D7_PBMC,elderly_subject_Visit 4,ZV127,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,62,elderly,PBMC,7
+GSM2094458,HIPCVAX005_ZV128_D0_PBMC,elderly_subject_Visit 1,ZV128,VZV,Atlanta,Visit 1; baseline,female,65,elderly,PBMC,0
+GSM2094530,HIPCVAX005_ZV128_D1_PBMC,elderly_subject_Visit 2,ZV128,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,65,elderly,PBMC,1
+GSM2094602,HIPCVAX005_ZV128_D3_PBMC,elderly_subject_Visit 3,ZV128,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,65,elderly,PBMC,3
+GSM2094674,HIPCVAX005_ZV128_D7_PBMC,elderly_subject_Visit 4,ZV128,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,65,elderly,PBMC,7
+GSM2094459,HIPCVAX005_ZV129_D0_PBMC,young_subject_Visit 1,ZV129,VZV,Atlanta,Visit 1; baseline,female,29,young,PBMC,0
+GSM2094531,HIPCVAX005_ZV129_D1_PBMC,young_subject_Visit 2,ZV129,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,29,young,PBMC,1
+GSM2094603,HIPCVAX005_ZV129_D3_PBMC,young_subject_Visit 3,ZV129,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,29,young,PBMC,3
+GSM2094675,HIPCVAX005_ZV129_D7_PBMC,young_subject_Visit 4,ZV129,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,29,young,PBMC,7
+GSM2094469,HIPCVAX005_ZV131_D0_PBMC,young_subject_Visit 1,ZV131,VZV,Atlanta,Visit 1; baseline,female,26,young,PBMC,0
+GSM2094541,HIPCVAX005_ZV131_D1_PBMC,young_subject_Visit 2,ZV131,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,26,young,PBMC,1
+GSM2094613,HIPCVAX005_ZV131_D3_PBMC,young_subject_Visit 3,ZV131,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,26,young,PBMC,3
+GSM2094685,HIPCVAX005_ZV131_D7_PBMC,young_subject_Visit 4,ZV131,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,26,young,PBMC,7
+GSM2094460,HIPCVAX005_ZV132_D0_PBMC,elderly_subject_Visit 1,ZV132,VZV,Atlanta,Visit 1; baseline,female,70,elderly,PBMC,0
+GSM2094532,HIPCVAX005_ZV132_D1_PBMC,elderly_subject_Visit 2,ZV132,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,70,elderly,PBMC,1
+GSM2094604,HIPCVAX005_ZV132_D3_PBMC,elderly_subject_Visit 3,ZV132,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,70,elderly,PBMC,3
+GSM2094676,HIPCVAX005_ZV132_D7_PBMC,elderly_subject_Visit 4,ZV132,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,70,elderly,PBMC,7
+GSM2094461,HIPCVAX005_ZV133_D0_PBMC,elderly_subject_Visit 1,ZV133,VZV,Atlanta,Visit 1; baseline,male,67,elderly,PBMC,0
+GSM2094533,HIPCVAX005_ZV133_D1_PBMC,elderly_subject_Visit 2,ZV133,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,67,elderly,PBMC,1
+GSM2094605,HIPCVAX005_ZV133_D3_PBMC,elderly_subject_Visit 3,ZV133,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,67,elderly,PBMC,3
+GSM2094677,HIPCVAX005_ZV133_D7_PBMC,elderly_subject_Visit 4,ZV133,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,67,elderly,PBMC,7
+GSM2094464,HIPCVAX005_ZV134_D0_PBMC,young_subject_Visit 1,ZV134,VZV,Atlanta,Visit 1; baseline,male,39,young,PBMC,0
+GSM2094536,HIPCVAX005_ZV134_D1_PBMC,young_subject_Visit 2,ZV134,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,39,young,PBMC,1
+GSM2094608,HIPCVAX005_ZV134_D3_PBMC,young_subject_Visit 3,ZV134,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,39,young,PBMC,3
+GSM2094680,HIPCVAX005_ZV134_D7_PBMC,young_subject_Visit 4,ZV134,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,39,young,PBMC,7
+GSM2094465,HIPCVAX005_ZV135_D0_PBMC,elderly_subject_Visit 1,ZV135,VZV,Atlanta,Visit 1; baseline,male,62,elderly,PBMC,0
+GSM2094537,HIPCVAX005_ZV135_D1_PBMC,elderly_subject_Visit 2,ZV135,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,62,elderly,PBMC,1
+GSM2094609,HIPCVAX005_ZV135_D3_PBMC,elderly_subject_Visit 3,ZV135,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,62,elderly,PBMC,3
+GSM2094681,HIPCVAX005_ZV135_D7_PBMC,elderly_subject_Visit 4,ZV135,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,62,elderly,PBMC,7
+GSM2094466,HIPCVAX005_ZV136_D0_PBMC,young_subject_Visit 1,ZV136,VZV,Atlanta,Visit 1; baseline,male,33,young,PBMC,0
+GSM2094538,HIPCVAX005_ZV136_D1_PBMC,young_subject_Visit 2,ZV136,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,33,young,PBMC,1
+GSM2094610,HIPCVAX005_ZV136_D3_PBMC,young_subject_Visit 3,ZV136,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,33,young,PBMC,3
+GSM2094682,HIPCVAX005_ZV136_D7_PBMC,young_subject_Visit 4,ZV136,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,33,young,PBMC,7
+GSM2094467,HIPCVAX005_ZV137_D0_PBMC,elderly_subject_Visit 1,ZV137,VZV,Atlanta,Visit 1; baseline,female,67,elderly,PBMC,0
+GSM2094539,HIPCVAX005_ZV137_D1_PBMC,elderly_subject_Visit 2,ZV137,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,67,elderly,PBMC,1
+GSM2094611,HIPCVAX005_ZV137_D3_PBMC,elderly_subject_Visit 3,ZV137,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,67,elderly,PBMC,3
+GSM2094683,HIPCVAX005_ZV137_D7_PBMC,elderly_subject_Visit 4,ZV137,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,67,elderly,PBMC,7
+GSM2094470,HIPCVAX005_ZV138_D0_PBMC,elderly_subject_Visit 1,ZV138,VZV,Atlanta,Visit 1; baseline,male,63,elderly,PBMC,0
+GSM2094542,HIPCVAX005_ZV138_D1_PBMC,elderly_subject_Visit 2,ZV138,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,63,elderly,PBMC,1
+GSM2094614,HIPCVAX005_ZV138_D3_PBMC,elderly_subject_Visit 3,ZV138,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,63,elderly,PBMC,3
+GSM2094686,HIPCVAX005_ZV138_D7_PBMC,elderly_subject_Visit 4,ZV138,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,63,elderly,PBMC,7
+GSM2094471,HIPCVAX005_ZV139_D0_PBMC,young_subject_Visit 1,ZV139,VZV,Atlanta,Visit 1; baseline,female,25,young,PBMC,0
+GSM2094543,HIPCVAX005_ZV139_D1_PBMC,young_subject_Visit 2,ZV139,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,25,young,PBMC,1
+GSM2094615,HIPCVAX005_ZV139_D3_PBMC,young_subject_Visit 3,ZV139,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,25,young,PBMC,3
+GSM2094687,HIPCVAX005_ZV139_D7_PBMC,young_subject_Visit 4,ZV139,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,25,young,PBMC,7
+GSM2094472,HIPCVAX005_ZV142_D0_PBMC,young_subject_Visit 1,ZV142,VZV,Atlanta,Visit 1; baseline,female,31,young,PBMC,0
+GSM2094544,HIPCVAX005_ZV142_D1_PBMC,young_subject_Visit 2,ZV142,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,31,young,PBMC,1
+GSM2094616,HIPCVAX005_ZV142_D3_PBMC,young_subject_Visit 3,ZV142,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,31,young,PBMC,3
+GSM2094688,HIPCVAX005_ZV142_D7_PBMC,young_subject_Visit 4,ZV142,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,31,young,PBMC,7
+GSM2094473,HIPCVAX005_ZV143_D0_PBMC,elderly_subject_Visit 1,ZV143,VZV,Atlanta,Visit 1; baseline,female,69,elderly,PBMC,0
+GSM2094545,HIPCVAX005_ZV143_D1_PBMC,elderly_subject_Visit 2,ZV143,VZV,Atlanta,Visit 2; day 1 post-vaccination,female,69,elderly,PBMC,1
+GSM2094617,HIPCVAX005_ZV143_D3_PBMC,elderly_subject_Visit 3,ZV143,VZV,Atlanta,Visit 3; days 3 post-vaccination,female,69,elderly,PBMC,3
+GSM2094689,HIPCVAX005_ZV143_D7_PBMC,elderly_subject_Visit 4,ZV143,VZV,Atlanta,Visit 4; days 7 post-vaccination,female,69,elderly,PBMC,7
+GSM2094474,HIPCVAX005_ZV144_D0_PBMC,elderly_subject_Visit 1,ZV144,VZV,Atlanta,Visit 1; baseline,male,68,elderly,PBMC,0
+GSM2094546,HIPCVAX005_ZV144_D1_PBMC,elderly_subject_Visit 2,ZV144,VZV,Atlanta,Visit 2; day 1 post-vaccination,male,68,elderly,PBMC,1
+GSM2094618,HIPCVAX005_ZV144_D3_PBMC,elderly_subject_Visit 3,ZV144,VZV,Atlanta,Visit 3; days 3 post-vaccination,male,68,elderly,PBMC,3
+GSM2094690,HIPCVAX005_ZV144_D7_PBMC,elderly_subject_Visit 4,ZV144,VZV,Atlanta,Visit 4; days 7 post-vaccination,male,68,elderly,PBMC,7
+GSM2094477,HIPCVAX005_ZV201_D0_PBMC,young_subject_Visit 1,ZV201,VZV,Denver,Visit 1; baseline,male,29,young,PBMC,0
+GSM2094549,HIPCVAX005_ZV201_D1_PBMC,young_subject_Visit 2,ZV201,VZV,Denver,Visit 2; day 1 post-vaccination,male,29,young,PBMC,1
+GSM2094621,HIPCVAX005_ZV201_D3_PBMC,young_subject_Visit 3,ZV201,VZV,Denver,Visit 3; days 3 post-vaccination,male,29,young,PBMC,3
+GSM2094693,HIPCVAX005_ZV201_D7_PBMC,young_subject_Visit 4,ZV201,VZV,Denver,Visit 4; days 7 post-vaccination,male,29,young,PBMC,7
+GSM2094478,HIPCVAX005_ZV202_D0_PBMC,young_subject_Visit 1,ZV202,VZV,Denver,Visit 1; baseline,female,34,young,PBMC,0
+GSM2094550,HIPCVAX005_ZV202_D1_PBMC,young_subject_Visit 2,ZV202,VZV,Denver,Visit 2; day 1 post-vaccination,female,34,young,PBMC,1
+GSM2094622,HIPCVAX005_ZV202_D3_PBMC,young_subject_Visit 3,ZV202,VZV,Denver,Visit 3; days 3 post-vaccination,female,34,young,PBMC,3
+GSM2094694,HIPCVAX005_ZV202_D7_PBMC,young_subject_Visit 4,ZV202,VZV,Denver,Visit 4; days 7 post-vaccination,female,34,young,PBMC,7
+GSM2094475,HIPCVAX005_ZV203_D0_PBMC,young_subject_Visit 1,ZV203,VZV,Denver,Visit 1; baseline,female,33,young,PBMC,0
+GSM2094547,HIPCVAX005_ZV203_D1_PBMC,young_subject_Visit 2,ZV203,VZV,Denver,Visit 2; day 1 post-vaccination,female,33,young,PBMC,1
+GSM2094619,HIPCVAX005_ZV203_D3_PBMC,young_subject_Visit 3,ZV203,VZV,Denver,Visit 3; days 3 post-vaccination,female,33,young,PBMC,3
+GSM2094691,HIPCVAX005_ZV203_D7_PBMC,young_subject_Visit 4,ZV203,VZV,Denver,Visit 4; days 7 post-vaccination,female,33,young,PBMC,7
+GSM2094476,HIPCVAX005_ZV204_D0_PBMC,young_subject_Visit 1,ZV204,VZV,Denver,Visit 1; baseline,male,28,young,PBMC,0
+GSM2094548,HIPCVAX005_ZV204_D1_PBMC,young_subject_Visit 2,ZV204,VZV,Denver,Visit 2; day 1 post-vaccination,male,28,young,PBMC,1
+GSM2094620,HIPCVAX005_ZV204_D3_PBMC,young_subject_Visit 3,ZV204,VZV,Denver,Visit 3; days 3 post-vaccination,male,28,young,PBMC,3
+GSM2094692,HIPCVAX005_ZV204_D7_PBMC,young_subject_Visit 4,ZV204,VZV,Denver,Visit 4; days 7 post-vaccination,male,28,young,PBMC,7
+GSM2094479,HIPCVAX005_ZV205_D0_PBMC,young_subject_Visit 1,ZV205,VZV,Denver,Visit 1; baseline,female,32,young,PBMC,0
+GSM2094551,HIPCVAX005_ZV205_D1_PBMC,young_subject_Visit 2,ZV205,VZV,Denver,Visit 2; day 1 post-vaccination,female,32,young,PBMC,1
+GSM2094623,HIPCVAX005_ZV205_D3_PBMC,young_subject_Visit 3,ZV205,VZV,Denver,Visit 3; days 3 post-vaccination,female,32,young,PBMC,3
+GSM2094695,HIPCVAX005_ZV205_D7_PBMC,young_subject_Visit 4,ZV205,VZV,Denver,Visit 4; days 7 post-vaccination,female,32,young,PBMC,7
+GSM2094480,HIPCVAX005_ZV206_D0_PBMC,young_subject_Visit 1,ZV206,VZV,Denver,Visit 1; baseline,female,28,young,PBMC,0
+GSM2094552,HIPCVAX005_ZV206_D1_PBMC,young_subject_Visit 2,ZV206,VZV,Denver,Visit 2; day 1 post-vaccination,female,28,young,PBMC,1
+GSM2094624,HIPCVAX005_ZV206_D3_PBMC,young_subject_Visit 3,ZV206,VZV,Denver,Visit 3; days 3 post-vaccination,female,28,young,PBMC,3
+GSM2094696,HIPCVAX005_ZV206_D7_PBMC,young_subject_Visit 4,ZV206,VZV,Denver,Visit 4; days 7 post-vaccination,female,28,young,PBMC,7
+GSM2094481,HIPCVAX005_ZV207_D0_PBMC,young_subject_Visit 1,ZV207,VZV,Denver,Visit 1; baseline,male,33,young,PBMC,0
+GSM2094553,HIPCVAX005_ZV207_D1_PBMC,young_subject_Visit 2,ZV207,VZV,Denver,Visit 2; day 1 post-vaccination,male,33,young,PBMC,1
+GSM2094625,HIPCVAX005_ZV207_D3_PBMC,young_subject_Visit 3,ZV207,VZV,Denver,Visit 3; days 3 post-vaccination,male,33,young,PBMC,3
+GSM2094697,HIPCVAX005_ZV207_D7_PBMC,young_subject_Visit 4,ZV207,VZV,Denver,Visit 4; days 7 post-vaccination,male,33,young,PBMC,7
+GSM2094488,HIPCVAX005_ZV208_D0_PBMC,young_subject_Visit 1,ZV208,VZV,Denver,Visit 1; baseline,female,33,young,PBMC,0
+GSM2094560,HIPCVAX005_ZV208_D1_PBMC,young_subject_Visit 2,ZV208,VZV,Denver,Visit 2; day 1 post-vaccination,female,33,young,PBMC,1
+GSM2094632,HIPCVAX005_ZV208_D3_PBMC,young_subject_Visit 3,ZV208,VZV,Denver,Visit 3; days 3 post-vaccination,female,33,young,PBMC,3
+GSM2094704,HIPCVAX005_ZV208_D7_PBMC,young_subject_Visit 4,ZV208,VZV,Denver,Visit 4; days 7 post-vaccination,female,33,young,PBMC,7
+GSM2094482,HIPCVAX005_ZV209_D0_PBMC,young_subject_Visit 1,ZV209,VZV,Denver,Visit 1; baseline,female,28,young,PBMC,0
+GSM2094554,HIPCVAX005_ZV209_D1_PBMC,young_subject_Visit 2,ZV209,VZV,Denver,Visit 2; day 1 post-vaccination,female,28,young,PBMC,1
+GSM2094626,HIPCVAX005_ZV209_D3_PBMC,young_subject_Visit 3,ZV209,VZV,Denver,Visit 3; days 3 post-vaccination,female,28,young,PBMC,3
+GSM2094698,HIPCVAX005_ZV209_D7_PBMC,young_subject_Visit 4,ZV209,VZV,Denver,Visit 4; days 7 post-vaccination,female,28,young,PBMC,7
+GSM2094485,HIPCVAX005_ZV210_D0_PBMC,young_subject_Visit 1,ZV210,VZV,Denver,Visit 1; baseline,female,25,young,PBMC,0
+GSM2094557,HIPCVAX005_ZV210_D1_PBMC,young_subject_Visit 2,ZV210,VZV,Denver,Visit 2; day 1 post-vaccination,female,25,young,PBMC,1
+GSM2094629,HIPCVAX005_ZV210_D3_PBMC,young_subject_Visit 3,ZV210,VZV,Denver,Visit 3; days 3 post-vaccination,female,25,young,PBMC,3
+GSM2094701,HIPCVAX005_ZV210_D7_PBMC,young_subject_Visit 4,ZV210,VZV,Denver,Visit 4; days 7 post-vaccination,female,25,young,PBMC,7
+GSM2094483,HIPCVAX005_ZV211_D0_PBMC,young_subject_Visit 1,ZV211,VZV,Denver,Visit 1; baseline,male,29,young,PBMC,0
+GSM2094555,HIPCVAX005_ZV211_D1_PBMC,young_subject_Visit 2,ZV211,VZV,Denver,Visit 2; day 1 post-vaccination,male,29,young,PBMC,1
+GSM2094627,HIPCVAX005_ZV211_D3_PBMC,young_subject_Visit 3,ZV211,VZV,Denver,Visit 3; days 3 post-vaccination,male,29,young,PBMC,3
+GSM2094699,HIPCVAX005_ZV211_D7_PBMC,young_subject_Visit 4,ZV211,VZV,Denver,Visit 4; days 7 post-vaccination,male,29,young,PBMC,7
+GSM2094484,HIPCVAX005_ZV212_D0_PBMC,young_subject_Visit 1,ZV212,VZV,Denver,Visit 1; baseline,female,40,young,PBMC,0
+GSM2094556,HIPCVAX005_ZV212_D1_PBMC,young_subject_Visit 2,ZV212,VZV,Denver,Visit 2; day 1 post-vaccination,female,40,young,PBMC,1
+GSM2094628,HIPCVAX005_ZV212_D3_PBMC,young_subject_Visit 3,ZV212,VZV,Denver,Visit 3; days 3 post-vaccination,female,40,young,PBMC,3
+GSM2094700,HIPCVAX005_ZV212_D7_PBMC,young_subject_Visit 4,ZV212,VZV,Denver,Visit 4; days 7 post-vaccination,female,40,young,PBMC,7
+GSM2094486,HIPCVAX005_ZV214_D0_PBMC,young_subject_Visit 1,ZV214,VZV,Denver,Visit 1; baseline,female,40,young,PBMC,0
+GSM2094558,HIPCVAX005_ZV214_D1_PBMC,young_subject_Visit 2,ZV214,VZV,Denver,Visit 2; day 1 post-vaccination,female,40,young,PBMC,1
+GSM2094630,HIPCVAX005_ZV214_D3_PBMC,young_subject_Visit 3,ZV214,VZV,Denver,Visit 3; days 3 post-vaccination,female,40,young,PBMC,3
+GSM2094702,HIPCVAX005_ZV214_D7_PBMC,young_subject_Visit 4,ZV214,VZV,Denver,Visit 4; days 7 post-vaccination,female,40,young,PBMC,7
+GSM2094487,HIPCVAX005_ZV215_D0_PBMC,elderly_subject_Visit 1,ZV215,VZV,Denver,Visit 1; baseline,female,68,elderly,PBMC,0
+GSM2094559,HIPCVAX005_ZV215_D1_PBMC,elderly_subject_Visit 2,ZV215,VZV,Denver,Visit 2; day 1 post-vaccination,female,68,elderly,PBMC,1
+GSM2094631,HIPCVAX005_ZV215_D3_PBMC,elderly_subject_Visit 3,ZV215,VZV,Denver,Visit 3; days 3 post-vaccination,female,68,elderly,PBMC,3
+GSM2094703,HIPCVAX005_ZV215_D7_PBMC,elderly_subject_Visit 4,ZV215,VZV,Denver,Visit 4; days 7 post-vaccination,female,68,elderly,PBMC,7
+GSM2094489,HIPCVAX005_ZV216_D0_PBMC,elderly_subject_Visit 1,ZV216,VZV,Denver,Visit 1; baseline,male,68,elderly,PBMC,0
+GSM2094561,HIPCVAX005_ZV216_D1_PBMC,elderly_subject_Visit 2,ZV216,VZV,Denver,Visit 2; day 1 post-vaccination,male,68,elderly,PBMC,1
+GSM2094633,HIPCVAX005_ZV216_D3_PBMC,elderly_subject_Visit 3,ZV216,VZV,Denver,Visit 3; days 3 post-vaccination,male,68,elderly,PBMC,3
+GSM2094705,HIPCVAX005_ZV216_D7_PBMC,elderly_subject_Visit 4,ZV216,VZV,Denver,Visit 4; days 7 post-vaccination,male,68,elderly,PBMC,7
+GSM2094490,HIPCVAX005_ZV217_D0_PBMC,elderly_subject_Visit 1,ZV217,VZV,Denver,Visit 1; baseline,male,60,elderly,PBMC,0
+GSM2094562,HIPCVAX005_ZV217_D1_PBMC,elderly_subject_Visit 2,ZV217,VZV,Denver,Visit 2; day 1 post-vaccination,male,60,elderly,PBMC,1
+GSM2094634,HIPCVAX005_ZV217_D3_PBMC,elderly_subject_Visit 3,ZV217,VZV,Denver,Visit 3; days 3 post-vaccination,male,60,elderly,PBMC,3
+GSM2094706,HIPCVAX005_ZV217_D7_PBMC,elderly_subject_Visit 4,ZV217,VZV,Denver,Visit 4; days 7 post-vaccination,male,60,elderly,PBMC,7
+GSM2094499,HIPCVAX005_ZV219_D0_PBMC,elderly_subject_Visit 1,ZV219,VZV,Denver,Visit 1; baseline,female,62,elderly,PBMC,0
+GSM2094571,HIPCVAX005_ZV219_D1_PBMC,elderly_subject_Visit 2,ZV219,VZV,Denver,Visit 2; day 1 post-vaccination,female,62,elderly,PBMC,1
+GSM2094643,HIPCVAX005_ZV219_D3_PBMC,elderly_subject_Visit 3,ZV219,VZV,Denver,Visit 3; days 3 post-vaccination,female,62,elderly,PBMC,3
+GSM2094715,HIPCVAX005_ZV219_D7_PBMC,elderly_subject_Visit 4,ZV219,VZV,Denver,Visit 4; days 7 post-vaccination,female,62,elderly,PBMC,7
+GSM2094491,HIPCVAX005_ZV220_D0_PBMC,elderly_subject_Visit 1,ZV220,VZV,Denver,Visit 1; baseline,female,62,elderly,PBMC,0
+GSM2094563,HIPCVAX005_ZV220_D1_PBMC,elderly_subject_Visit 2,ZV220,VZV,Denver,Visit 2; day 1 post-vaccination,female,62,elderly,PBMC,1
+GSM2094635,HIPCVAX005_ZV220_D3_PBMC,elderly_subject_Visit 3,ZV220,VZV,Denver,Visit 3; days 3 post-vaccination,female,62,elderly,PBMC,3
+GSM2094707,HIPCVAX005_ZV220_D7_PBMC,elderly_subject_Visit 4,ZV220,VZV,Denver,Visit 4; days 7 post-vaccination,female,62,elderly,PBMC,7
+GSM2094492,HIPCVAX005_ZV221_D0_PBMC,elderly_subject_Visit 1,ZV221,VZV,Denver,Visit 1; baseline,male,68,elderly,PBMC,0
+GSM2094564,HIPCVAX005_ZV221_D1_PBMC,elderly_subject_Visit 2,ZV221,VZV,Denver,Visit 2; day 1 post-vaccination,male,68,elderly,PBMC,1
+GSM2094636,HIPCVAX005_ZV221_D3_PBMC,elderly_subject_Visit 3,ZV221,VZV,Denver,Visit 3; days 3 post-vaccination,male,68,elderly,PBMC,3
+GSM2094708,HIPCVAX005_ZV221_D7_PBMC,elderly_subject_Visit 4,ZV221,VZV,Denver,Visit 4; days 7 post-vaccination,male,68,elderly,PBMC,7
+GSM2094493,HIPCVAX005_ZV222_D0_PBMC,elderly_subject_Visit 1,ZV222,VZV,Denver,Visit 1; baseline,male,73,elderly,PBMC,0
+GSM2094565,HIPCVAX005_ZV222_D1_PBMC,elderly_subject_Visit 2,ZV222,VZV,Denver,Visit 2; day 1 post-vaccination,male,73,elderly,PBMC,1
+GSM2094637,HIPCVAX005_ZV222_D3_PBMC,elderly_subject_Visit 3,ZV222,VZV,Denver,Visit 3; days 3 post-vaccination,male,73,elderly,PBMC,3
+GSM2094709,HIPCVAX005_ZV222_D7_PBMC,elderly_subject_Visit 4,ZV222,VZV,Denver,Visit 4; days 7 post-vaccination,male,73,elderly,PBMC,7
+GSM2094496,HIPCVAX005_ZV223_D0_PBMC,elderly_subject_Visit 1,ZV223,VZV,Denver,Visit 1; baseline,female,60,elderly,PBMC,0
+GSM2094568,HIPCVAX005_ZV223_D1_PBMC,elderly_subject_Visit 2,ZV223,VZV,Denver,Visit 2; day 1 post-vaccination,female,60,elderly,PBMC,1
+GSM2094640,HIPCVAX005_ZV223_D3_PBMC,elderly_subject_Visit 3,ZV223,VZV,Denver,Visit 3; days 3 post-vaccination,female,60,elderly,PBMC,3
+GSM2094712,HIPCVAX005_ZV223_D7_PBMC,elderly_subject_Visit 4,ZV223,VZV,Denver,Visit 4; days 7 post-vaccination,female,60,elderly,PBMC,7
+GSM2094494,HIPCVAX005_ZV224_D0_PBMC,young_subject_Visit 1,ZV224,VZV,Denver,Visit 1; baseline,female,28,young,PBMC,0
+GSM2094566,HIPCVAX005_ZV224_D1_PBMC,young_subject_Visit 2,ZV224,VZV,Denver,Visit 2; day 1 post-vaccination,female,28,young,PBMC,1
+GSM2094638,HIPCVAX005_ZV224_D3_PBMC,young_subject_Visit 3,ZV224,VZV,Denver,Visit 3; days 3 post-vaccination,female,28,young,PBMC,3
+GSM2094710,HIPCVAX005_ZV224_D7_PBMC,young_subject_Visit 4,ZV224,VZV,Denver,Visit 4; days 7 post-vaccination,female,28,young,PBMC,7
+GSM2094501,HIPCVAX005_ZV225_D0_PBMC,elderly_subject_Visit 1,ZV225,VZV,Denver,Visit 1; baseline,male,61,elderly,PBMC,0
+GSM2094573,HIPCVAX005_ZV225_D1_PBMC,elderly_subject_Visit 2,ZV225,VZV,Denver,Visit 2; day 1 post-vaccination,male,61,elderly,PBMC,1
+GSM2094645,HIPCVAX005_ZV225_D3_PBMC,elderly_subject_Visit 3,ZV225,VZV,Denver,Visit 3; days 3 post-vaccination,male,61,elderly,PBMC,3
+GSM2094717,HIPCVAX005_ZV225_D7_PBMC,elderly_subject_Visit 4,ZV225,VZV,Denver,Visit 4; days 7 post-vaccination,male,61,elderly,PBMC,7
+GSM2094502,HIPCVAX005_ZV226_D0_PBMC,elderly_subject_Visit 1,ZV226,VZV,Denver,Visit 1; baseline,female,60,elderly,PBMC,0
+GSM2094574,HIPCVAX005_ZV226_D1_PBMC,elderly_subject_Visit 2,ZV226,VZV,Denver,Visit 2; day 1 post-vaccination,female,60,elderly,PBMC,1
+GSM2094646,HIPCVAX005_ZV226_D3_PBMC,elderly_subject_Visit 3,ZV226,VZV,Denver,Visit 3; days 3 post-vaccination,female,60,elderly,PBMC,3
+GSM2094718,HIPCVAX005_ZV226_D7_PBMC,elderly_subject_Visit 4,ZV226,VZV,Denver,Visit 4; days 7 post-vaccination,female,60,elderly,PBMC,7
+GSM2094497,HIPCVAX005_ZV227_D0_PBMC,young_subject_Visit 1,ZV227,VZV,Denver,Visit 1; baseline,female,37,young,PBMC,0
+GSM2094569,HIPCVAX005_ZV227_D1_PBMC,young_subject_Visit 2,ZV227,VZV,Denver,Visit 2; day 1 post-vaccination,female,37,young,PBMC,1
+GSM2094641,HIPCVAX005_ZV227_D3_PBMC,young_subject_Visit 3,ZV227,VZV,Denver,Visit 3; days 3 post-vaccination,female,37,young,PBMC,3
+GSM2094713,HIPCVAX005_ZV227_D7_PBMC,young_subject_Visit 4,ZV227,VZV,Denver,Visit 4; days 7 post-vaccination,female,37,young,PBMC,7
+GSM2094495,HIPCVAX005_ZV228_D0_PBMC,elderly_subject_Visit 1,ZV228,VZV,Denver,Visit 1; baseline,male,72,elderly,PBMC,0
+GSM2094567,HIPCVAX005_ZV228_D1_PBMC,elderly_subject_Visit 2,ZV228,VZV,Denver,Visit 2; day 1 post-vaccination,male,72,elderly,PBMC,1
+GSM2094639,HIPCVAX005_ZV228_D3_PBMC,elderly_subject_Visit 3,ZV228,VZV,Denver,Visit 3; days 3 post-vaccination,male,72,elderly,PBMC,3
+GSM2094711,HIPCVAX005_ZV228_D7_PBMC,elderly_subject_Visit 4,ZV228,VZV,Denver,Visit 4; days 7 post-vaccination,male,72,elderly,PBMC,7
+GSM2094500,HIPCVAX005_ZV230_D0_PBMC,elderly_subject_Visit 1,ZV230,VZV,Denver,Visit 1; baseline,female,63,elderly,PBMC,0
+GSM2094572,HIPCVAX005_ZV230_D1_PBMC,elderly_subject_Visit 2,ZV230,VZV,Denver,Visit 2; day 1 post-vaccination,female,63,elderly,PBMC,1
+GSM2094644,HIPCVAX005_ZV230_D3_PBMC,elderly_subject_Visit 3,ZV230,VZV,Denver,Visit 3; days 3 post-vaccination,female,63,elderly,PBMC,3
+GSM2094716,HIPCVAX005_ZV230_D7_PBMC,elderly_subject_Visit 4,ZV230,VZV,Denver,Visit 4; days 7 post-vaccination,female,63,elderly,PBMC,7
+GSM2094498,HIPCVAX005_ZV231_D0_PBMC,elderly_subject_Visit 1,ZV231,VZV,Denver,Visit 1; baseline,male,61,elderly,PBMC,0
+GSM2094570,HIPCVAX005_ZV231_D1_PBMC,elderly_subject_Visit 2,ZV231,VZV,Denver,Visit 2; day 1 post-vaccination,male,61,elderly,PBMC,1
+GSM2094642,HIPCVAX005_ZV231_D3_PBMC,elderly_subject_Visit 3,ZV231,VZV,Denver,Visit 3; days 3 post-vaccination,male,61,elderly,PBMC,3
+GSM2094714,HIPCVAX005_ZV231_D7_PBMC,elderly_subject_Visit 4,ZV231,VZV,Denver,Visit 4; days 7 post-vaccination,male,61,elderly,PBMC,7
+GSM2094503,HIPCVAX005_ZV232_D0_PBMC,elderly_subject_Visit 1,ZV232,VZV,Denver,Visit 1; baseline,female,64,elderly,PBMC,0
+GSM2094575,HIPCVAX005_ZV232_D1_PBMC,elderly_subject_Visit 2,ZV232,VZV,Denver,Visit 2; day 1 post-vaccination,female,64,elderly,PBMC,1
+GSM2094647,HIPCVAX005_ZV232_D3_PBMC,elderly_subject_Visit 3,ZV232,VZV,Denver,Visit 3; days 3 post-vaccination,female,64,elderly,PBMC,3
+GSM2094719,HIPCVAX005_ZV232_D7_PBMC,elderly_subject_Visit 4,ZV232,VZV,Denver,Visit 4; days 7 post-vaccination,female,64,elderly,PBMC,7
+GSM2094504,HIPCVAX005_ZV233_D0_PBMC,elderly_subject_Visit 1,ZV233,VZV,Denver,Visit 1; baseline,female,63,elderly,PBMC,0
+GSM2094576,HIPCVAX005_ZV233_D1_PBMC,elderly_subject_Visit 2,ZV233,VZV,Denver,Visit 2; day 1 post-vaccination,female,63,elderly,PBMC,1
+GSM2094648,HIPCVAX005_ZV233_D3_PBMC,elderly_subject_Visit 3,ZV233,VZV,Denver,Visit 3; days 3 post-vaccination,female,63,elderly,PBMC,3
+GSM2094720,HIPCVAX005_ZV233_D7_PBMC,elderly_subject_Visit 4,ZV233,VZV,Denver,Visit 4; days 7 post-vaccination,female,63,elderly,PBMC,7
+GSM2094506,HIPCVAX005_ZV234_D0_PBMC,elderly_subject_Visit 1,ZV234,VZV,Denver,Visit 1; baseline,female,69,elderly,PBMC,0
+GSM2094578,HIPCVAX005_ZV234_D1_PBMC,elderly_subject_Visit 2,ZV234,VZV,Denver,Visit 2; day 1 post-vaccination,female,69,elderly,PBMC,1
+GSM2094650,HIPCVAX005_ZV234_D3_PBMC,elderly_subject_Visit 3,ZV234,VZV,Denver,Visit 3; days 3 post-vaccination,female,69,elderly,PBMC,3
+GSM2094722,HIPCVAX005_ZV234_D7_PBMC,elderly_subject_Visit 4,ZV234,VZV,Denver,Visit 4; days 7 post-vaccination,female,69,elderly,PBMC,7
+GSM2094505,HIPCVAX005_ZV235_D0_PBMC,elderly_subject_Visit 1,ZV235,VZV,Denver,Visit 1; baseline,female,62,elderly,PBMC,0
+GSM2094577,HIPCVAX005_ZV235_D1_PBMC,elderly_subject_Visit 2,ZV235,VZV,Denver,Visit 2; day 1 post-vaccination,female,62,elderly,PBMC,1
+GSM2094649,HIPCVAX005_ZV235_D3_PBMC,elderly_subject_Visit 3,ZV235,VZV,Denver,Visit 3; days 3 post-vaccination,female,62,elderly,PBMC,3
+GSM2094721,HIPCVAX005_ZV235_D7_PBMC,elderly_subject_Visit 4,ZV235,VZV,Denver,Visit 4; days 7 post-vaccination,female,62,elderly,PBMC,7
+GSM2094507,HIPCVAX005_ZV236_D0_PBMC,elderly_subject_Visit 1,ZV236,VZV,Denver,Visit 1; baseline,male,63,elderly,PBMC,0
+GSM2094579,HIPCVAX005_ZV236_D1_PBMC,elderly_subject_Visit 2,ZV236,VZV,Denver,Visit 2; day 1 post-vaccination,male,63,elderly,PBMC,1
+GSM2094651,HIPCVAX005_ZV236_D3_PBMC,elderly_subject_Visit 3,ZV236,VZV,Denver,Visit 3; days 3 post-vaccination,male,63,elderly,PBMC,3
+GSM2094723,HIPCVAX005_ZV236_D7_PBMC,elderly_subject_Visit 4,ZV236,VZV,Denver,Visit 4; days 7 post-vaccination,male,63,elderly,PBMC,7
+GSM2094508,HIPCVAX005_ZV238_D0_PBMC,elderly_subject_Visit 1,ZV238,VZV,Denver,Visit 1; baseline,female,61,elderly,PBMC,0
+GSM2094580,HIPCVAX005_ZV238_D1_PBMC,elderly_subject_Visit 2,ZV238,VZV,Denver,Visit 2; day 1 post-vaccination,female,61,elderly,PBMC,1
+GSM2094652,HIPCVAX005_ZV238_D3_PBMC,elderly_subject_Visit 3,ZV238,VZV,Denver,Visit 3; days 3 post-vaccination,female,61,elderly,PBMC,3
+GSM2094724,HIPCVAX005_ZV238_D7_PBMC,elderly_subject_Visit 4,ZV238,VZV,Denver,Visit 4; days 7 post-vaccination,female,61,elderly,PBMC,7
+GSM2094509,HIPCVAX005_ZV239_D0_PBMC,elderly_subject_Visit 1,ZV239,VZV,Denver,Visit 1; baseline,male,60,elderly,PBMC,0
+GSM2094581,HIPCVAX005_ZV239_D1_PBMC,elderly_subject_Visit 2,ZV239,VZV,Denver,Visit 2; day 1 post-vaccination,male,60,elderly,PBMC,1
+GSM2094653,HIPCVAX005_ZV239_D3_PBMC,elderly_subject_Visit 3,ZV239,VZV,Denver,Visit 3; days 3 post-vaccination,male,60,elderly,PBMC,3
+GSM2094725,HIPCVAX005_ZV239_D7_PBMC,elderly_subject_Visit 4,ZV239,VZV,Denver,Visit 4; days 7 post-vaccination,male,60,elderly,PBMC,7

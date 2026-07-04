@@ -1,0 +1,2 @@
+outcome,model,cv_n,cv_r,cv_r2,cv_rmse
+IgG_D30_0,matrix PLSR flattened gene-time matrix,70,-0.10195807553112175,-0.33387595105763257,1.0902759744989425

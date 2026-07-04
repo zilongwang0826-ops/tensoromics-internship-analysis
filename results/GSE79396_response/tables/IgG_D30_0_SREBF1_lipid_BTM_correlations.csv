@@ -1,0 +1,25 @@
+BTM,target,n,r,p_value,module_time
+D1/0_antigen presentation (lipids and proteins) (M28),outcome,70,0.06390547474784175,0.5991785522894264,D1/0
+D1/0_antigen presentation (lipids and proteins) (M28),tPLS_Comp1,70,0.0898832175363752,0.4593145168798233,D1/0
+D1/0_enriched for promoter motif NATCACGTGAY (putative SREBF1 targets) (M178),outcome,70,-0.04944979052195355,0.684356112793933,D1/0
+D1/0_enriched for promoter motif NATCACGTGAY (putative SREBF1 targets) (M178),tPLS_Comp1,70,-0.12871991000273697,0.2882437077247285,D1/0
+D1/0_glycerophospholipid metabolism (M114.1),outcome,70,-0.05538073663599507,0.6488536393767355,D1/0
+D1/0_glycerophospholipid metabolism (M114.1),tPLS_Comp1,70,-0.03807930983239394,0.7543023996759991,D1/0
+"D1/0_lipid metabolism, endoplasmic reticulum (M92)",outcome,70,-0.06500310387436757,0.592906792712401,D1/0
+"D1/0_lipid metabolism, endoplasmic reticulum (M92)",tPLS_Comp1,70,-0.1819466359458193,0.13168793683250551,D1/0
+D3/0_antigen presentation (lipids and proteins) (M28),outcome,70,0.16805669404261392,0.164328848358942,D3/0
+D3/0_antigen presentation (lipids and proteins) (M28),tPLS_Comp1,70,0.30026063010877035,0.011553554356482513,D3/0
+D3/0_enriched for promoter motif NATCACGTGAY (putative SREBF1 targets) (M178),outcome,70,0.08791787693799978,0.46923003727034185,D3/0
+D3/0_enriched for promoter motif NATCACGTGAY (putative SREBF1 targets) (M178),tPLS_Comp1,70,0.01181234877218664,0.922684250291399,D3/0
+D3/0_glycerophospholipid metabolism (M114.1),outcome,70,0.08268813274508745,0.49616977671102025,D3/0
+D3/0_glycerophospholipid metabolism (M114.1),tPLS_Comp1,70,0.08695339517829709,0.4741380371936442,D3/0
+"D3/0_lipid metabolism, endoplasmic reticulum (M92)",outcome,70,0.019033528241055735,0.8757234754965124,D3/0
+"D3/0_lipid metabolism, endoplasmic reticulum (M92)",tPLS_Comp1,70,-0.1531350949689743,0.20564524761436342,D3/0
+D7/0_antigen presentation (lipids and proteins) (M28),outcome,70,0.1335292802715142,0.2704555152873214,D7/0
+D7/0_antigen presentation (lipids and proteins) (M28),tPLS_Comp1,70,0.4159398733743535,3.422001186208164e-4,D7/0
+D7/0_enriched for promoter motif NATCACGTGAY (putative SREBF1 targets) (M178),outcome,70,0.1453987661202152,0.22975738793834327,D7/0
+D7/0_enriched for promoter motif NATCACGTGAY (putative SREBF1 targets) (M178),tPLS_Comp1,70,0.006800644149315226,0.9554418598134599,D7/0
+D7/0_glycerophospholipid metabolism (M114.1),outcome,70,-0.0940026925888233,0.4389083127187994,D7/0
+D7/0_glycerophospholipid metabolism (M114.1),tPLS_Comp1,70,-0.19717141146354744,0.1018279307232685,D7/0
+"D7/0_lipid metabolism, endoplasmic reticulum (M92)",outcome,70,-0.07161092111679716,0.5557880592365585,D7/0
+"D7/0_lipid metabolism, endoplasmic reticulum (M92)",tPLS_Comp1,70,-0.350871900495858,0.0029009016255680834,D7/0

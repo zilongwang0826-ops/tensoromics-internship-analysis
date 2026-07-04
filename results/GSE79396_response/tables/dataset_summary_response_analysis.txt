@@ -1,0 +1,26 @@
+GSE79396 tPLS response analysis
+================================
+
+Supplemental package directory:
+C:/Users/31608/Documents/Codex/2026-06-25/pdf-plugin-pdf-openai-primary-runtime/outputs/S0092867417304774_mmc2/SupplementalPackage-MMRN
+
+Transcriptome table: C:/Users/31608/Documents/Codex/2026-06-25/pdf-plugin-pdf-openai-primary-runtime/outputs/S0092867417304774_mmc2/SupplementalPackage-MMRN/sourcedata/genetable_vax05_rma_ordered.txt 
+Expression matrix dimensions: 20741 genes x 288 samples
+Complete transcriptome subjects: 72 
+Tensor time contrasts: D1-D0, D3-D0, D7-D0 
+Features retained: 5012 
+Focus SREBF1/M178/sterol genes retained: 25 
+IgG subjects overlapping complete transcriptome: 70 
+Tfh subjects overlapping complete transcriptome: 34 
+
+Main outputs are in:
+Tables: C:/Users/31608/Documents/Codex/2026-06-25/pdf-plugin-pdf-openai-primary-runtime/outputs/results_GSE79396_tPLS_response/tables 
+Figures: C:/Users/31608/Documents/Codex/2026-06-25/pdf-plugin-pdf-openai-primary-runtime/outputs/results_GSE79396_tPLS_response/figures 
+
+# A tibble: 2 × 17
+  outcome      outcome_column n_subjects n_features n_time_points comp1_r comp1_p comp2_r comp2_p permutation_p tpls_cv_r
+  <chr>        <chr>               <int>      <int>         <int>   <dbl>   <dbl>   <dbl>   <dbl>         <dbl>     <dbl>
+1 IgG_D30_0    D30/0_IgG              70       5012             3   0.635 3.67e-9   0.508 7.01e-6          0.23    -0.173
+2 TFH_CXCR3po… D7/0_TFH.CXCR…         34       5012             3   0.701 3.82e-6   0.568 4.59e-4          0.4     -0.106
+# ℹ 6 more variables: tpls_cv_r2 <dbl>, matrix_pls_cv_r <dbl>, matrix_pls_cv_r2 <dbl>, top_comp1_gene_1 <chr>,
+#   top_comp1_gene_2 <chr>, top_comp1_gene_3 <chr>

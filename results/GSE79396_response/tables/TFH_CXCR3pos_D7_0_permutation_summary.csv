@@ -1,0 +1,2 @@
+outcome,n_subjects,n_features,n_time_points,observed_max_abs_cor,permutation_p,n_perm
+TFH_CXCR3pos_D7_0,34,5012,3,0.7013852902808351,0.4,199

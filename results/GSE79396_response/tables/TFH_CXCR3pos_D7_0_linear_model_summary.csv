@@ -1,0 +1,3 @@
+model,n,r_squared,adj_r_squared
+outcome ~ Comp1 + Comp2,34,0.8145007530818762,0.8025330597323198
+outcome ~ Comp1 + age + gender,23,0.7016446660872256,0.6545359291536297

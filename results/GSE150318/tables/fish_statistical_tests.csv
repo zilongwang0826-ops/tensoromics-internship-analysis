@@ -1,0 +1,4 @@
+"analysis","statistic","p_value"
+"tPLS-DA scores Comp1-Comp2 ~ lifespan group",0.446129295706044,7.71723475537558e-15
+"tPLS-DA label permutation",0.446129295706044,0.0348258706467662
+"Concatenated matrix PLS-DA scores Comp1-Comp2 ~ lifespan group",0.499310727878214,2.99402720035565e-17

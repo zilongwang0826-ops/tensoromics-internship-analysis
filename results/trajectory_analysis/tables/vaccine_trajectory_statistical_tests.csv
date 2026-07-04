@@ -1,0 +1,3 @@
+analysis,statistic,p_value,n_perm
+trajectory PCA PC1-PC2 ~ age group,0.17741634859348465,0.001184984162059109,NA
+trajectory PCA age-group permutation,0.17741634859348465,0.001,999

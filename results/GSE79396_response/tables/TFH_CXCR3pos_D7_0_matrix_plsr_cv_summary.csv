@@ -1,0 +1,2 @@
+outcome,model,cv_n,cv_r,cv_r2,cv_rmse
+TFH_CXCR3pos_D7_0,matrix PLSR flattened gene-time matrix,34,0.01545184519719295,-0.2499788873356379,3.854422742533448

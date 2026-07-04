@@ -1,0 +1,4 @@
+analysis,statistic,p_value,n_perm
+trajectory PLS Comp1-Comp2 ~ lifespan group,0.446736326844519,7.265551156206208e-15,NA
+trajectory PLS label permutation,0.446736326844519,0.002,499
+age at death ~ trajectory PLS Comp1 + Comp2,0.5048468384308664,1.6243349947191562e-17,NA

@@ -1,0 +1,2 @@
+"model","r_squared","adj_r_squared","f_statistic","p_value"
+"AgeDeathDays ~ tPLSDA Comp1 + Comp2",0.519658381146876,0.510924897167728,59.5018416920013,3.05676433166258e-18

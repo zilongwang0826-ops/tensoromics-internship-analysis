@@ -1,0 +1,2 @@
+outcome,n_subjects,n_features,n_time_points,observed_max_abs_cor,permutation_p,n_perm
+IgG_D30_0,70,5012,3,0.6345427197816094,0.23,199

@@ -1,0 +1,7 @@
+analysis,test,statistic,p_value
+Tensor PCA scores Comp1-Comp2 ~ age_group,MANOVA Pillai,0.1864741269920846,8.08746196300682e-4
+Tensor PCA scores Comp1-Comp2 ~ age_group (permutation),Permutation MANOVA Pillai,0.1864741269920846,0.002
+Matrix PCA subject-averaged PC1-PC2 ~ age_group,MANOVA Pillai,0.18211704037491452,9.724001466602849e-4
+Matrix PCA subject-averaged PC1-PC2 ~ age_group (permutation),Permutation MANOVA Pillai,0.18211704037491452,0.004
+Tensor PCA Comp1 ~ age_group,Linear model F-test,0.007240518570145196,0.9324317607462107
+Tensor PCA Comp2 ~ age_group,Linear model F-test,16.03426664594496,1.528681520601491e-4

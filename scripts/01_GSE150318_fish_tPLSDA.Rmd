@@ -1,0 +1,926 @@
+﻿---
+title: "GSE150318_tPLSDA_analysis"
+author: "Zilong Wang"
+date: "2026-05-29"
+output: html_document
+---
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(GEOquery)
+library(mixOmics)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(ggrepel)
+library(tensorOmics)
+
+load_author_utility_or_define_fallback <- function() {
+  if (file.exists("helper/utility.R")) {
+    source("helper/utility.R")
+  }
+
+  if (!exists("loadingPlot", mode = "function")) {
+    loadingPlot <<- function(
+      loadings,
+      merged_df,
+      comp = 1,
+      top = 10,
+      negGroup = NULL,
+      posGroup = NULL,
+      group_col = "rGroup",
+      time_col = "rDay",
+      id_col = "Participant",
+      feature_start_col = 7,
+      use_letters = TRUE,
+      group_colors = NULL
+    ) {
+      feature_cols <- names(merged_df)[feature_start_col:ncol(merged_df)]
+      feature_cols <- intersect(rownames(loadings), feature_cols)
+
+      if (length(feature_cols) == 0) {
+        stop("No feature columns in merged_df match rownames(loadings).")
+      }
+
+      loading_values <- loadings[feature_cols, comp]
+      top_features <- names(sort(abs(loading_values), decreasing = TRUE))[
+        seq_len(min(top, length(feature_cols)))
+      ]
+
+      plot_df <- merged_df %>%
+        select(all_of(c(group_col, time_col, id_col, top_features))) %>%
+        pivot_longer(
+          cols = all_of(top_features),
+          names_to = "Feature",
+          values_to = "Expression"
+        )
+
+      summary_df <- plot_df %>%
+        group_by(across(all_of(c("Feature", group_col, time_col)))) %>%
+        summarise(
+          MeanExpression = mean(Expression, na.rm = TRUE),
+          SE = sd(Expression, na.rm = TRUE) / sqrt(dplyr::n()),
+          .groups = "drop"
+        )
+
+      p <- ggplot(
+        summary_df,
+        aes_string(
+          x = time_col,
+          y = "MeanExpression",
+          color = group_col,
+          group = group_col
+        )
+      ) +
+        geom_line(linewidth = 0.8) +
+        geom_point(size = 2) +
+        geom_errorbar(
+          aes(ymin = MeanExpression - SE, ymax = MeanExpression + SE),
+          width = 0.15,
+          linewidth = 0.4
+        ) +
+        facet_wrap(~ Feature, scales = "free_y") +
+        theme_bw() +
+        labs(
+          title = paste0("Top loading feature trajectories, component ", comp),
+          x = time_col,
+          y = "Mean expression",
+          color = group_col
+        )
+
+      if (!is.null(group_colors)) {
+        p <- p + scale_color_manual(values = group_colors)
+      }
+
+      print(p)
+      invisible(p)
+    }
+  }
+}
+
+load_author_utility_or_define_fallback()
+```
+
+1.  Download and load data
+
+```{r}
+data_dir <- file.path("data", "GSE150318")
+dir.create(data_dir, showWarnings = FALSE, recursive = TRUE)
+
+counts_url <- "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE150318&file=GSE150318_counts.csv.gz&format=file"
+counts_path <- file.path(data_dir, "GSE150318_counts.csv.gz")
+
+if (!file.exists(counts_path)) {
+  download.file(
+    counts_url,
+    destfile = counts_path,
+    mode = "wb"
+  )
+}
+
+gse <- getGEO("GSE150318", GSEMatrix = TRUE)
+meta <- pData(gse[[1]])
+
+counts <- read.csv(
+  gzfile(counts_path),
+  row.names = 1,
+  check.names = FALSE
+)
+
+dim(counts)
+dim(meta)
+colnames(counts)[1:10]
+```
+
+2.  Parse sample names
+
+```{r}
+sample_info <- data.frame(
+  SampleName = colnames(counts)
+)
+
+sample_info <- sample_info %>%
+  mutate(
+    FishID = sub("_(10|20)w$", "", SampleName),
+    Time = sub("^.*_(10|20)w$", "\\1", SampleName),
+    TimeWeek = as.numeric(sub("w", "", Time))
+  )
+
+head(sample_info, 12)
+table(sample_info$TimeWeek)
+length(unique(sample_info$FishID))
+
+paired_check <- sample_info %>%
+  count(FishID) %>%
+  count(n, name = "number_of_fish")
+
+paired_check
+```
+
+3.  Parse metadata
+
+```{r}
+meta_parsed <- data.frame(
+  SampleName = colnames(counts),
+  GeoID = rownames(meta),
+  Title = meta$title,
+  FishID_meta = sub("animal id: ", "", meta$characteristics_ch1.1),
+  TimeWeek_meta = as.numeric(sub("age at fin clip \\(weeks\\): ", "", meta$characteristics_ch1.4)),
+  AgeDeathDays = as.numeric(sub("age at death \\(days\\): ", "", meta$characteristics_ch1.5))
+)
+
+meta_parsed <- meta_parsed %>%
+  mutate(
+    FishID_from_counts = sub("_(10|20)w$", "", SampleName),
+    TimeWeek_from_counts = as.numeric(sub("^.*_(10|20)w$", "\\1", SampleName))
+  )
+
+table(meta_parsed$FishID_meta == meta_parsed$FishID_from_counts)
+table(meta_parsed$TimeWeek_meta == meta_parsed$TimeWeek_from_counts)
+
+fish_info <- meta_parsed %>%
+  distinct(FishID_meta, AgeDeathDays) %>%
+  arrange(FishID_meta)
+
+median_death <- median(fish_info$AgeDeathDays, na.rm = TRUE)
+
+fish_info <- fish_info %>%
+  mutate(
+    LifespanGroup = ifelse(AgeDeathDays <= median_death, "short_lived", "long_lived"),
+    LifespanGroup = factor(LifespanGroup, levels = c("short_lived", "long_lived"))
+  )
+
+median_death
+table(fish_info$LifespanGroup)
+head(fish_info, 20)
+```
+
+4.  Normalize and filter genes
+
+```{r}
+valid_fish <- fish_info %>%
+  filter(!is.na(AgeDeathDays))
+
+valid_samples <- meta_parsed %>%
+  filter(FishID_meta %in% valid_fish$FishID_meta) %>%
+  arrange(FishID_meta, TimeWeek_meta)
+
+counts_valid <- counts[, valid_samples$SampleName]
+
+dim(counts_valid)
+length(unique(valid_samples$FishID_meta))
+table(valid_samples$TimeWeek_meta)
+
+valid_samples %>%
+  count(FishID_meta) %>%
+  count(n, name = "number_of_fish")
+
+keep_genes <- rowSums(counts_valid) > 10
+counts_filtered <- counts_valid[keep_genes, ]
+
+cpm <- t(t(counts_filtered) / colSums(counts_filtered)) * 1e6
+logcpm <- log2(cpm + 1)
+
+gene_var <- apply(logcpm, 1, var)
+top_genes <- names(sort(gene_var, decreasing = TRUE))[1:1000]
+
+logcpm_top <- logcpm[top_genes, ]
+
+nrow(counts)
+nrow(counts_filtered)
+dim(logcpm_top)
+head(top_genes, 10)
+```
+
+5.  Create tensor: fish Ã— genes Ã— time
+
+```{r}
+fish_order <- valid_fish$FishID_meta
+gene_order <- rownames(logcpm_top)
+time_order <- c(10, 20)
+
+X_tensor <- array(
+  NA,
+  dim = c(length(fish_order), length(gene_order), length(time_order)),
+  dimnames = list(
+    fish_order,
+    gene_order,
+    paste0(time_order, "w")
+  )
+)
+
+for (i in seq_along(fish_order)) {
+  for (k in seq_along(time_order)) {
+    
+    fish_id <- fish_order[i]
+    time_week <- time_order[k]
+    
+    sample_name <- valid_samples %>%
+      filter(FishID_meta == fish_id, TimeWeek_meta == time_week) %>%
+      pull(SampleName)
+    
+    X_tensor[i, , k] <- logcpm_top[, sample_name]
+  }
+}
+
+group_vec <- valid_fish$LifespanGroup
+names(group_vec) <- valid_fish$FishID_meta
+
+dim(X_tensor)
+length(group_vec)
+table(group_vec)
+sum(is.na(X_tensor))
+
+X_tensor[1, 1:5, ]
+```
+
+6.  Matrix-based PCA and PLS-DA
+
+```{r}
+sample_meta <- valid_samples %>%
+  left_join(valid_fish, by = "FishID_meta")
+
+X_matrix <- t(logcpm_top[, sample_meta$SampleName])
+rownames(X_matrix) <- sample_meta$SampleName
+
+sample_group <- sample_meta$LifespanGroup
+sample_time <- sample_meta$TimeWeek_meta
+
+pca_res <- mixOmics::pca(X_matrix, ncomp = 2)
+
+res_pca <- data.frame(
+  Group = sample_group,
+  Time = sample_time,
+  PC1 = pca_res$variates$X[, 1],
+  PC2 = pca_res$variates$X[, 2]
+)
+
+ggplot(res_pca, aes(x = PC1, y = PC2, color = Group, alpha = Time)) +
+  geom_point(size = 3) +
+  theme_bw() +
+  ggtitle("PCA: matrix-based unsupervised") +
+  xlab("Component 1") +
+  ylab("Component 2")
+
+plsda_res <- mixOmics::plsda(X_matrix, sample_group, ncomp = 2)
+
+res_plsda <- data.frame(
+  Group = sample_group,
+  Time = sample_time,
+  PC1 = plsda_res$variates$X[, 1],
+  PC2 = plsda_res$variates$X[, 2]
+)
+
+ggplot(res_plsda, aes(x = PC1, y = PC2, color = Group, alpha = Time)) +
+  geom_point(size = 3) +
+  theme_bw() +
+  ggtitle("PLS-DA: matrix-based supervised") +
+  xlab("Component 1") +
+  ylab("Component 2")
+
+dim(X_matrix)
+table(sample_group)
+table(sample_time)
+```
+
+7.  Tensor-based tPLS-DA
+
+```{r}
+tplsda_res <- tplsda(X_tensor, group_vec, ncomp = 2)
+
+res_tplsda <- data.frame(
+  FishID = names(group_vec),
+  Group = group_vec,
+  AgeDeathDays = valid_fish$AgeDeathDays,
+  PC1 = tplsda_res$x_projected[, 1],
+  PC2 = tplsda_res$x_projected[, 2]
+)
+
+ggplot(res_tplsda, aes(x = PC1, y = PC2, color = Group)) +
+  geom_point(size = 3) +
+  theme_bw() +
+  ggtitle("tPLS-DA: tensor-based supervised") +
+  xlab("Component 1") +
+  ylab("Component 2")
+
+dim(tplsda_res$x_projected)
+head(res_tplsda)
+table(res_tplsda$Group)
+```
+
+8.  Inspect loadings
+
+```{r}
+names(tplsda_res)
+dim(tplsda_res$x_loadings)
+head(tplsda_res$x_loadings)
+```
+
+```{r}
+gc()
+
+load_author_utility_or_define_fallback()
+
+gene_names <- rownames(tplsda_res$x_loadings)
+
+if (is.null(gene_names) || length(gene_names) != nrow(tplsda_res$x_loadings)) {
+  gene_names <- gene_order
+}
+
+loading_comp1 <- data.frame(
+  Gene = gene_names,
+  Loading = tplsda_res$x_loadings[, 1]
+)
+
+top10_genes_author <- loading_comp1 %>%
+  mutate(AbsLoading = abs(Loading)) %>%
+  arrange(desc(AbsLoading)) %>%
+  slice(1:10) %>%
+  pull(Gene)
+
+cat("Top 10 genes for Component 1:\n")
+print(top10_genes_author)
+
+loadings_small <- tplsda_res$x_loadings[
+  match(top10_genes_author, gene_names),
+  ,
+  drop = FALSE
+]
+
+rownames(loadings_small) <- top10_genes_author
+
+sample_meta_for_plot <- valid_samples %>%
+  select(SampleName, FishID_meta, TimeWeek_meta) %>%
+  left_join(
+    valid_fish %>% select(FishID_meta, AgeDeathDays, LifespanGroup),
+    by = "FishID_meta"
+  ) %>%
+  arrange(FishID_meta, TimeWeek_meta)
+
+feature_table_gene_small <- t(logcpm_top[top10_genes_author, sample_meta_for_plot$SampleName])
+feature_table_gene_small <- as.data.frame(feature_table_gene_small)
+rownames(feature_table_gene_small) <- sample_meta_for_plot$SampleName
+
+cat("Rows in sample metadata:\n")
+print(nrow(sample_meta_for_plot))
+
+cat("Rows in feature table:\n")
+print(nrow(feature_table_gene_small))
+
+cat("Columns in feature table:\n")
+print(ncol(feature_table_gene_small))
+
+merged_df_gene_small <- data.frame(
+  rGroup = sample_meta_for_plot$LifespanGroup,
+  Participant = sample_meta_for_plot$FishID_meta,
+  rDay = sample_meta_for_plot$TimeWeek_meta,
+  SampleName = sample_meta_for_plot$SampleName,
+  AgeDeathDays = sample_meta_for_plot$AgeDeathDays,
+  Sex = rep("male", nrow(sample_meta_for_plot)),
+  feature_table_gene_small,
+  check.names = FALSE
+)
+
+merged_df_gene_small$rGroup <- factor(
+  merged_df_gene_small$rGroup,
+  levels = c("short_lived", "long_lived")
+)
+
+custom_colors_lifespan <- c(
+  "short_lived" = "tomato",
+  "long_lived" = "turquoise3"
+)
+
+loadingPlot(
+  loadings = loadings_small,
+  merged_df = merged_df_gene_small,
+  comp = 1,
+  top = 10,
+  negGroup = c("long_lived"),
+  posGroup = c("short_lived"),
+  group_col = "rGroup",
+  time_col = "rDay",
+  id_col = "Participant",
+  feature_start_col = 7,
+  use_letters = TRUE,
+  group_colors = custom_colors_lifespan
+)
+```
+
+```{r}
+gc()
+
+load_author_utility_or_define_fallback()
+
+gene_names <- rownames(tplsda_res$x_loadings)
+
+if (is.null(gene_names) || length(gene_names) != nrow(tplsda_res$x_loadings)) {
+  gene_names <- gene_order
+}
+
+loading_comp2 <- data.frame(
+  Gene = gene_names,
+  Loading = tplsda_res$x_loadings[, 2]
+)
+
+top10_genes_comp2 <- loading_comp2 %>%
+  mutate(AbsLoading = abs(Loading)) %>%
+  arrange(desc(AbsLoading)) %>%
+  slice(1:10) %>%
+  pull(Gene)
+
+cat("Top 10 genes for Component 2:\n")
+print(top10_genes_comp2)
+
+loadings_small_comp2 <- tplsda_res$x_loadings[
+  match(top10_genes_comp2, gene_names),
+  ,
+  drop = FALSE
+]
+
+rownames(loadings_small_comp2) <- top10_genes_comp2
+
+sample_meta_for_plot <- valid_samples %>%
+  select(SampleName, FishID_meta, TimeWeek_meta) %>%
+  left_join(
+    valid_fish %>% select(FishID_meta, AgeDeathDays, LifespanGroup),
+    by = "FishID_meta"
+  ) %>%
+  arrange(FishID_meta, TimeWeek_meta)
+
+feature_table_gene_small_comp2 <- t(logcpm_top[top10_genes_comp2, sample_meta_for_plot$SampleName])
+feature_table_gene_small_comp2 <- as.data.frame(feature_table_gene_small_comp2)
+rownames(feature_table_gene_small_comp2) <- sample_meta_for_plot$SampleName
+
+merged_df_gene_small_comp2 <- data.frame(
+  rGroup = sample_meta_for_plot$LifespanGroup,
+  Participant = sample_meta_for_plot$FishID_meta,
+  rDay = sample_meta_for_plot$TimeWeek_meta,
+  SampleName = sample_meta_for_plot$SampleName,
+  AgeDeathDays = sample_meta_for_plot$AgeDeathDays,
+  Sex = rep("male", nrow(sample_meta_for_plot)),
+  feature_table_gene_small_comp2,
+  check.names = FALSE
+)
+
+merged_df_gene_small_comp2$rGroup <- factor(
+  merged_df_gene_small_comp2$rGroup,
+  levels = c("short_lived", "long_lived")
+)
+
+custom_colors_lifespan <- c(
+  "short_lived" = "tomato",
+  "long_lived" = "turquoise3"
+)
+
+loadingPlot(
+  loadings = loadings_small_comp2,
+  merged_df = merged_df_gene_small_comp2,
+  comp = 2,
+  top = 10,
+  negGroup = c("short_lived"),
+  posGroup = c("long_lived"),
+  group_col = "rGroup",
+  time_col = "rDay",
+  id_col = "Participant",
+  feature_start_col = 7,
+  use_letters = TRUE,
+  group_colors = custom_colors_lifespan
+)
+```
+
+
+9. Stronger validation and trajectory-level follow-up
+
+```{r}
+###############################################################################
+# Stronger follow-up analysis for the fish aging experiment
+#
+# This chunk is designed to be pasted after the current tPLS-DA/loading sections.
+# It assumes that the following objects already exist from the previous analysis:
+# X_tensor, group_vec, valid_fish, valid_samples, logcpm_top, gene_order,
+# time_order, tplsda_res
+###############################################################################
+
+out_dir_fish <- file.path("results", "GSE150318", "generated")
+dir.create(out_dir_fish, recursive = TRUE, showWarnings = FALSE)
+
+set.seed(123)
+
+###############################################################################
+# 1) Subject-level statistical test on tPLS-DA scores
+###############################################################################
+
+gene_names <- rownames(tplsda_res$x_loadings)
+if (is.null(gene_names) || length(gene_names) != nrow(tplsda_res$x_loadings)) {
+  gene_names <- gene_order
+  rownames(tplsda_res$x_loadings) <- gene_order
+}
+
+tplsda_scores <- data.frame(
+  FishID = names(group_vec),
+  Group = factor(group_vec, levels = c("short_lived", "long_lived")),
+  AgeDeathDays = valid_fish$AgeDeathDays[match(names(group_vec), valid_fish$FishID_meta)],
+  Comp1 = tplsda_res$x_projected[, 1],
+  Comp2 = tplsda_res$x_projected[, 2]
+)
+
+get_pillai <- function(score_df) {
+  fit <- manova(cbind(Comp1, Comp2) ~ Group, data = score_df)
+  st <- summary(fit, test = "Pillai")$stats
+  data.frame(
+    statistic = unname(st[1, "Pillai"]),
+    p_value = unname(st[1, "Pr(>F)"])
+  )
+}
+
+obs_tplsda_manova <- get_pillai(tplsda_scores)
+obs_tplsda_manova$analysis <- "tPLS-DA scores Comp1-Comp2 ~ lifespan group"
+
+###############################################################################
+# 2) Permutation test: is the supervised separation stronger than random labels?
+###############################################################################
+
+calc_tplsda_pillai <- function(y_perm) {
+  y_perm <- factor(y_perm, levels = c("short_lived", "long_lived"))
+  mod_perm <- tensorOmics::tplsda(X_tensor, y_perm, ncomp = 2)
+  score_perm <- data.frame(
+    Group = y_perm,
+    Comp1 = mod_perm$x_projected[, 1],
+    Comp2 = mod_perm$x_projected[, 2]
+  )
+  get_pillai(score_perm)$statistic
+}
+
+n_perm <- 200
+perm_tplsda_stats <- replicate(
+  n_perm,
+  calc_tplsda_pillai(sample(as.character(group_vec)))
+)
+
+tplsda_perm_test <- data.frame(
+  analysis = "tPLS-DA label permutation",
+  statistic = obs_tplsda_manova$statistic,
+  p_value = (1 + sum(perm_tplsda_stats >= obs_tplsda_manova$statistic)) / (n_perm + 1),
+  n_perm = n_perm
+)
+
+###############################################################################
+# 3) Continuous lifespan interpretation
+#    This tests whether the tensor components are associated with actual lifespan.
+###############################################################################
+
+lifespan_lm <- lm(AgeDeathDays ~ Comp1 + Comp2, data = tplsda_scores)
+lifespan_lm_summary <- summary(lifespan_lm)
+
+lifespan_lm_table <- data.frame(
+  term = rownames(coef(lifespan_lm_summary)),
+  estimate = coef(lifespan_lm_summary)[, "Estimate"],
+  std_error = coef(lifespan_lm_summary)[, "Std. Error"],
+  statistic = coef(lifespan_lm_summary)[, "t value"],
+  p_value = coef(lifespan_lm_summary)[, "Pr(>|t|)"],
+  row.names = NULL
+)
+
+lifespan_model_summary <- data.frame(
+  model = "AgeDeathDays ~ tPLSDA Comp1 + Comp2",
+  r_squared = lifespan_lm_summary$r.squared,
+  adj_r_squared = lifespan_lm_summary$adj.r.squared,
+  f_statistic = unname(lifespan_lm_summary$fstatistic[1]),
+  p_value = pf(
+    lifespan_lm_summary$fstatistic[1],
+    lifespan_lm_summary$fstatistic[2],
+    lifespan_lm_summary$fstatistic[3],
+    lower.tail = FALSE
+  )
+)
+
+cor_comp1_lifespan <- cor.test(tplsda_scores$Comp1, tplsda_scores$AgeDeathDays)
+cor_comp2_lifespan <- cor.test(tplsda_scores$Comp2, tplsda_scores$AgeDeathDays)
+
+lifespan_cor_table <- data.frame(
+  component = c("Comp1", "Comp2"),
+  correlation = c(unname(cor_comp1_lifespan$estimate), unname(cor_comp2_lifespan$estimate)),
+  p_value = c(cor_comp1_lifespan$p.value, cor_comp2_lifespan$p.value)
+)
+
+###############################################################################
+# 4) Matrix comparison using a subject-level concatenated matrix
+#    Each fish is represented by [10w genes | 20w genes].
+###############################################################################
+
+X_concat <- do.call(
+  cbind,
+  lapply(seq_along(time_order), function(k) X_tensor[, , k])
+)
+colnames(X_concat) <- paste0(
+  rep(gene_order, times = length(time_order)),
+  "_",
+  rep(dimnames(X_tensor)[[3]], each = length(gene_order))
+)
+rownames(X_concat) <- names(group_vec)
+
+concat_plsda_res <- mixOmics::plsda(X_concat, group_vec, ncomp = 2)
+
+concat_scores <- data.frame(
+  FishID = names(group_vec),
+  Group = factor(group_vec, levels = c("short_lived", "long_lived")),
+  Comp1 = concat_plsda_res$variates$X[, 1],
+  Comp2 = concat_plsda_res$variates$X[, 2]
+)
+
+concat_manova <- get_pillai(concat_scores)
+concat_manova$analysis <- "Concatenated matrix PLS-DA scores Comp1-Comp2 ~ lifespan group"
+
+###############################################################################
+# 5) Trajectory-specific gene analysis
+#    For each gene, compare the 20w-10w change between lifespan groups.
+###############################################################################
+
+delta_mat <- X_tensor[, , "20w"] - X_tensor[, , "10w"]
+delta_group <- factor(group_vec[rownames(delta_mat)], levels = c("short_lived", "long_lived"))
+
+delta_tests <- lapply(seq_len(ncol(delta_mat)), function(j) {
+  gene <- colnames(delta_mat)[j]
+  delta <- delta_mat[, j]
+  tt <- t.test(delta ~ delta_group)
+  data.frame(
+    Gene = gene,
+    mean_delta_short = mean(delta[delta_group == "short_lived"], na.rm = TRUE),
+    mean_delta_long = mean(delta[delta_group == "long_lived"], na.rm = TRUE),
+    difference_long_minus_short =
+      mean(delta[delta_group == "long_lived"], na.rm = TRUE) -
+      mean(delta[delta_group == "short_lived"], na.rm = TRUE),
+    p_value = tt$p.value
+  )
+})
+
+delta_tests <- bind_rows(delta_tests) %>%
+  mutate(fdr = p.adjust(p_value, method = "BH")) %>%
+  arrange(p_value)
+
+loading_table <- data.frame(
+  Gene = gene_names,
+  LoadingComp1 = tplsda_res$x_loadings[, 1],
+  LoadingComp2 = tplsda_res$x_loadings[, 2]
+) %>%
+  mutate(
+    AbsLoadingComp1 = abs(LoadingComp1),
+    AbsLoadingComp2 = abs(LoadingComp2),
+    AbsLoadingMax = pmax(AbsLoadingComp1, AbsLoadingComp2)
+  ) %>%
+  arrange(desc(AbsLoadingMax))
+
+top_loading_with_delta <- loading_table %>%
+  left_join(delta_tests, by = "Gene") %>%
+  arrange(desc(AbsLoadingMax))
+
+###############################################################################
+# 6) Overlap between tPLS-DA loadings and genes with differential trajectories
+###############################################################################
+
+n_top <- 50
+top_loading_genes <- loading_table %>%
+  slice(1:n_top) %>%
+  pull(Gene)
+
+top_delta_genes <- delta_tests %>%
+  slice(1:n_top) %>%
+  pull(Gene)
+
+overlap_genes <- intersect(top_loading_genes, top_delta_genes)
+n_genes_tested <- length(gene_order)
+
+overlap_summary <- data.frame(
+  top_n = n_top,
+  n_genes_tested = n_genes_tested,
+  overlap = length(overlap_genes),
+  expected_overlap = n_top * n_top / n_genes_tested,
+  hypergeom_p_value = phyper(
+    length(overlap_genes) - 1,
+    n_top,
+    n_genes_tested - n_top,
+    n_top,
+    lower.tail = FALSE
+  ),
+  overlap_genes = paste(overlap_genes, collapse = ";")
+)
+
+###############################################################################
+# 7) Plot tPLS-DA scores with actual lifespan as continuous color
+###############################################################################
+
+p_tplsda_lifespan <- ggplot(
+  tplsda_scores,
+  aes(x = Comp1, y = Comp2, color = AgeDeathDays, shape = Group)
+) +
+  geom_point(size = 3) +
+  scale_color_viridis_c() +
+  theme_bw() +
+  ggtitle("tPLS-DA scores colored by actual lifespan") +
+  xlab("Component 1") +
+  ylab("Component 2")
+
+print(p_tplsda_lifespan)
+
+ggsave(
+  filename = file.path(out_dir_fish, "fish_tplsda_scores_lifespan_gradient.png"),
+  plot = p_tplsda_lifespan,
+  width = 7,
+  height = 5,
+  dpi = 300
+)
+
+###############################################################################
+# 8) Plot mean trajectories for the top loading genes
+###############################################################################
+
+top_genes_for_plot <- loading_table %>%
+  slice(1:8) %>%
+  pull(Gene)
+
+sample_meta_for_plot <- valid_samples %>%
+  select(SampleName, FishID_meta, TimeWeek_meta) %>%
+  left_join(
+    valid_fish %>% select(FishID_meta, AgeDeathDays, LifespanGroup),
+    by = "FishID_meta"
+  ) %>%
+  arrange(FishID_meta, TimeWeek_meta)
+
+expr_top <- t(logcpm_top[top_genes_for_plot, sample_meta_for_plot$SampleName])
+expr_top <- as.data.frame(expr_top, check.names = FALSE)
+expr_top$SampleName <- rownames(expr_top)
+
+expr_long <- expr_top %>%
+  pivot_longer(
+    cols = all_of(top_genes_for_plot),
+    names_to = "Gene",
+    values_to = "Expression"
+  ) %>%
+  left_join(sample_meta_for_plot, by = "SampleName") %>%
+  mutate(
+    LifespanGroup = factor(LifespanGroup, levels = c("short_lived", "long_lived"))
+  )
+
+p_top_gene_trajectories <- ggplot(
+  expr_long,
+  aes(x = TimeWeek_meta, y = Expression, color = LifespanGroup, group = LifespanGroup)
+) +
+  stat_summary(fun = mean, geom = "line", linewidth = 1) +
+  stat_summary(fun = mean, geom = "point", size = 2) +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.4) +
+  facet_wrap(~ Gene, scales = "free_y", ncol = 4) +
+  theme_bw() +
+  scale_color_manual(values = c("short_lived" = "tomato", "long_lived" = "turquoise3")) +
+  ggtitle("Mean trajectories of top tPLS-DA loading genes") +
+  xlab("Age at fin clip (weeks)") +
+  ylab("log2(CPM + 1)")
+
+print(p_top_gene_trajectories)
+
+ggsave(
+  filename = file.path(out_dir_fish, "fish_top_loading_gene_trajectories.png"),
+  plot = p_top_gene_trajectories,
+  width = 10,
+  height = 6,
+  dpi = 300
+)
+
+###############################################################################
+# 9) Save all result tables
+###############################################################################
+
+fish_statistical_tests <- bind_rows(
+  obs_tplsda_manova %>% select(analysis, statistic, p_value),
+  tplsda_perm_test %>% select(analysis, statistic, p_value),
+  concat_manova %>% select(analysis, statistic, p_value)
+)
+
+write.csv(
+  fish_statistical_tests,
+  file.path(out_dir_fish, "fish_statistical_tests.csv"),
+  row.names = FALSE
+)
+
+write.csv(
+  tplsda_scores,
+  file.path(out_dir_fish, "fish_tplsda_scores.csv"),
+  row.names = FALSE
+)
+
+write.csv(
+  lifespan_lm_table,
+  file.path(out_dir_fish, "fish_lifespan_lm_coefficients.csv"),
+  row.names = FALSE
+)
+
+write.csv(
+  lifespan_model_summary,
+  file.path(out_dir_fish, "fish_lifespan_lm_summary.csv"),
+  row.names = FALSE
+)
+
+write.csv(
+  lifespan_cor_table,
+  file.path(out_dir_fish, "fish_lifespan_correlations.csv"),
+  row.names = FALSE
+)
+
+write.csv(
+  delta_tests,
+  file.path(out_dir_fish, "fish_delta_group_tests_all_genes.csv"),
+  row.names = FALSE
+)
+
+write.csv(
+  top_loading_with_delta,
+  file.path(out_dir_fish, "fish_top_loading_with_delta_tests.csv"),
+  row.names = FALSE
+)
+
+write.csv(
+  overlap_summary,
+  file.path(out_dir_fish, "fish_top_loading_delta_overlap.csv"),
+  row.names = FALSE
+)
+
+cat("\nEnhanced fish analysis finished.\n")
+cat("Results saved in:", out_dir_fish, "\n")
+print(fish_statistical_tests)
+print(lifespan_model_summary)
+print(lifespan_cor_table)
+print(overlap_summary)
+```
+
+Functional annotation check
+
+```{r}
+if (requireNamespace("gprofiler2", quietly = TRUE)) {
+  top_for_enrichment <- loading_table %>%
+    slice(1:100) %>%
+    pull(Gene)
+  
+  gost_res <- tryCatch(
+    gprofiler2::gost(
+      query = top_for_enrichment,
+      organism = "nfurzeri",
+      sources = c("GO:BP", "KEGG", "REAC")
+    ),
+    error = function(e) NULL
+  )
+  
+  if (!is.null(gost_res) && !is.null(gost_res$result)) {
+    write.csv(
+      gost_res$result,
+      file.path(out_dir_fish, "fish_top_loading_gprofiler_enrichment.csv"),
+      row.names = FALSE
+    )
+    head(gost_res$result, 20)
+  } else {
+    message("g:Profiler did not return enrichment results for these IDs.")
+  }
+} else {
+  message("gprofiler2 is not installed; enrichment was not run.")
+}
+```

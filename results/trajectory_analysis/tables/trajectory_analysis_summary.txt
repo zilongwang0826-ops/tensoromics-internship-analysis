@@ -1,0 +1,21 @@
+Trajectory analysis summary
+
+Fish aging:
+  Complete fish: 113
+  Median age at death: 310 days
+  Top variable genes: 1000
+  Trajectory PLS MANOVA p: 7.266e-15
+  Trajectory PLS permutation p: 0.002
+  Age-at-death model R2: 0.5048
+  Top-loading/top-delta overlap: 36/50
+
+Vaccine response:
+  Complete subjects: 72
+  Young/elderly:    young elderly       31      41 
+  Top variable probes: 2000
+  Trajectory PCA MANOVA p: 0.001185
+  Trajectory PCA permutation p: 0.001
+  Strongest age component: PC2 (adjusted p = 7.913e-05)
+
+Figures: results/trajectory_analysis/figures
+Tables: results/trajectory_analysis/tables
